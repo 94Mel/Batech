@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "İletişim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="contact-section">
+    <div class="contact-info">
+        <h2>İletişim Bilgileri</h2>
+        <ul>
+            <li>
+                <strong>Adres:</strong>
+                Ünalan Mahallesi Derem Sokak No: 9/2 Kat 5, Üsküdar / İSTANBUL
+            </li>
+            <li>
+                <strong>Telefon:</strong>
+                <a href="tel:0552 906 93 72">0552 906 93 72</a>
+            </li>
+            <li>
+                <strong>E-posta:</strong>
+                <a href="mailto:info@ba-tech.com">info@ba-tech.com</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    @*   Haritayı başlat ve görüntüle *@
+        function haritaBaslat() {
+            var merkez = { lat: 41.003028869628906, lng: 29.059885025024414 }; // İstanbul koordinatları
+
+            var harita = new google.maps.Map(document.getElementById('map'), {
+                center: merkez,
+                zoom: 15 // Yakınlaştırma seviyesini gereğine göre ayarlayın
+            });
+
+            var isaretci = new google.maps.Marker({
+                position: merkez,
+                map: harita,
+                title: 'Ba-Tech Konumu' // İşaretçi başlığı
+            });
+    @* AIzaSyDSppjxaYLAZPTQAfIj6OKDCIeb2P102Xg *@
+        }
+</script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSppjxaYLAZPTQAfIj6OKDCIeb2P102Xg&callback=console.debug&libraries=maps,marker&v=beta">
+</script>
+<link rel="stylesheet" href="./style.css" />

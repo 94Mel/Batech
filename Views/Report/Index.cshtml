@@ -1,0 +1,110 @@
+﻿@using System.Data
+@model DataTable
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <style>
+        .custom-navbar {
+            background-color: #DCDCD3; /* İstediğiniz rengi buraya yazabilirsiniz */
+        }
+    </style>
+</head>
+
+<@* nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light custom-navbar border-bottom box-shadow mb-3">
+    <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">AnaSayfa</a>
+                </li>
+
+            </ul>
+            <partial name="_LoginPartial" />
+
+
+        </div>
+    </div>
+</nav> *@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+
+    <!-- Include DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap5.css">
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <!-- Include Bootstrap library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Include DataTables library -->
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>
+
+    <style>
+        body {
+            padding: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <table id="example" class="table table-striped " style="width:100%">
+        @* <input type="text" id="searchInput" placeholder="Search...">
+        <button type="button" onclick="search()">Search</button> *@
+
+        <thead>
+            <tr>
+                @foreach (DataColumn column in Model.Columns)
+                {
+                    <th>@column.ColumnName</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (DataRow row in Model.Rows)
+            {
+                <tr>
+                    @foreach (var cell in row.ItemArray)
+                    {
+                        <td>@cell.ToString()</td>
+                    }
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                @foreach (DataColumn column in Model.Columns)
+                {
+                    <th>@column.ColumnName</th>
+                }
+            </tr>
+        </tfoot>
+    </table>
+    <table id="example" class="display" style="width:100%">
+
+        <thead>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(function () {
+            new DataTable('#example');
+        });
+    </script>
+</body>
+</html>

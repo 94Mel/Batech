@@ -1,0 +1,78 @@
+﻿
+
+
+@{
+    var form = ViewData["Forms"] as List<Form>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+   
+
+
+<h2>Başvuru Ekranı</h2>
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}
+<div class="form-container">
+    <form  method="post" asp-action="Apply">
+        <label for="firstName">Ad:</label><br>
+        <input type="text" id="firstName" name="firstName" required /><br><br>
+
+        <label for="lastName">Soyad:</label><br>
+        <input type="text" id="lastName" name="lastName" required /><br><br>
+
+        <label for="gsmNumber">GSM Numaranız:</label><br>
+        <input type="text" id="gsmNumber" name="gsmNumber" required /><br><br>
+
+        <label for="EPosta">E-posta:</label><br>
+        <input type="email" id="EPosta" name="EPosta" required /><br><br>
+
+        <label for="website">İnternet Adresiniz:</label><br>
+        <input type="text" id="website" name="website" required /><br><br>
+
+        <label for="Ciro">Aylık POS Cironuz:</label><br>
+        <input type="text" id="Ciro" name="Ciro" required /><br><br>
+
+        <label for="mesaj">Mesajınız:</label><br>
+        <textarea id="message" name="mesaj" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Gönder" />
+    </form>
+</div>
+
+<style>
+    .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input[type="text"], input[type="email"], input[type="url"], input[type="number"], textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    input[type="submit"] {
+        background-color: #00b3b3;
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 0;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #008080;
+        }
+</style>
+

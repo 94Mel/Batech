@@ -1,0 +1,23 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #DCDCD3;
+}
+
+.body-container {
+    display: flex;
+    justify-content: center; /* Sayfayı yatayda ortalar */
+    align-items: center; /* Sayfayı dikeyde ortalar */
+    height: 100vh; /* Sayfanın tamamını kaplar */
+}
+
+.right-side {
+    padding: 20px; /* Sağ tarafta içeriği biraz dolduruyoruz */
+    text-align: center; /* İçeriği ortalamak için */
+}
+
+/* Yatay kaydırma çubuğunu gizlemek */
+body {
+    overflow-x: hidden;
+}

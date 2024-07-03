@@ -1,0 +1,230 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> SignInManager
+@inject RoleManager<IdentityRole> _roleManager;
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Batech</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Batech.styles.css" asp-append-version="true" />
+
+
+    <title>Footer with Social Icons</title>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Ba-Tech Teknoloji A.Ş.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #57cbce;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+            header img {
+                max-width: 150px;
+            }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+            nav a {
+                color: white;
+                padding: 14px 20px;
+                text-decoration: none;
+                text-align: center;
+            }
+
+                nav a:hover {
+                    background-color: #57cbce;
+                }
+
+        .container {
+            flex: 1;
+            padding: 20px;
+        }
+
+      
+
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+            .slides img {
+                width: 100%;
+                height: auto;
+            }
+
+        .navigation-manual {
+            position: absolute;
+            width: 100%;
+            margin-top: -40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .manual-btn {
+            border: 2px solid #57cbce;
+            padding: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+            .manual-btn:not(:last-child) {
+                margin-right: 40px;
+            }
+
+            .manual-btn:hover {
+                background: #57cbce;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                <img src="~/images/batech-logo (1).svg" alt="Ba-Tech" width="95" height="60">
+               
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Home")">Anasayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("About", "Home")">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Apply", "Form")">Başvuru Ekranı</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Contact", "Home")">İletişim</a>
+                    </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "Report")">Rapor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index">Profilim</a>
+                        </li>
+                        <li class="nav-item">
+                            <form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" method="post" class="form-inline">
+                                <button type="submit" class="nav-link btn btn-link" style="color: #386552;">Çıkış</button>
+                            </form>
+                        </li>
+                        @if (User.IsInRole("SuperAdmin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Kayıt</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="RoleManager" asp-action="Index">Rol</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="UserRole" asp-action="Index">Yetki</a>
+                            </li>
+                            
+
+                        }
+                       
+                    }
+                    else
+                    {
+                        @* <li class="nav-item">
+                            <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Giriş</a>
+                        </li> *@
+                       
+                    }
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main role="main" class="flex-shrink-0">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+   @*  <script src="~/js/site.js" asp-append-version="true"></script> *@
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+ 
+</html>
+<footer class="footera ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Ba-Tech</h5>
+                    <p>
+                        BATECH TEKNOLOJİ A.Ş.<br>
+                        Ünalan Mahallesi Derem Sokak No: 9/2 Kat 5<br>
+                        Üsküdar / İSTANBUL
+                    </p>
+                    <p>Tel: 0552 906 93 72</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Hızlı Erişim</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Action("Index", "Home")">Anasayfa</a></li>
+                        <li><a href="@Url.Action("About", "Home")">Hakkımızda</a></li>
+                        <li><a href="@Url.Action("Apply", "Form")">Başvuru Ekranı</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Sosyal Medya</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="https://www.instagram.com/batech.technology?igsh=ZTM3dXE2anlzOW5l" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/company/batech-technology/mycompany/?viewAsMember=true"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <p class="text-muted">&copy; 2024 Ba-Tech. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </footer>

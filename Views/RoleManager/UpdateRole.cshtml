@@ -1,0 +1,10 @@
+﻿@model UpdateRoleViewModel
+
+<form asp-action="UpdateRole" method="post">
+    <div>
+        <input type="hidden" asp-for="RoleId" />
+        <label>New Role Name:</label>
+        <input type="text" asp-for="NewRoleName" />
+    </div>
+    <button type="submit">Update Role</button>
+</form>
