@@ -3,7 +3,6 @@
 @inject UserManager<ApplicationUser> UserManager
 @inject RoleManager<IdentityRole> _roleManager;
 
-
 @{
     ViewData["Title"] = "Anasayfa";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -17,24 +16,117 @@
 </div>
 
 <!-- Ana İçerik -->
-<div id="main-content" style="display: none;">
-    <div class="welcome-text text-center">
-        <h1 class="display-4">Teknoloji Dünyasına Adım Atın!</h1>
-        <p>Finansal teknolojinin öncüsü olan Ba-Tech'e hoş geldiniz. Biz, sadece bir teknoloji şirketi değil, aynı zamanda geleceğinizi inşa eden bir ekip olarak buradayız.</p>
-    </div>
+@* <div id="main-content" style="display: none;">
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="~/images/batech-logo (1).svg" alt="Ba-Tech Logo" class="navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Anasayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hizmetler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header> *@
 
-    <div class="about-text text-center">
-        <h2 class="display-5">Hakkımızda</h2>
-        <p>Ba-Tech Teknoloji A.Ş., sanal POS sistemleri alanında öncü ve yenilikçi bir firma olarak faaliyet göstermektedir. Sunduğumuz güvenli ve hızlı ödeme çözümleri ile işletmelerin dijital dünyada başarılı olmalarına yardımcı oluyoruz.</p>
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="display-4">Teknoloji Dünyasına Adım Atın!</h1>
+                <p class="lead">Finansal teknolojinin öncüsü olan Ba-Tech'e hoş geldiniz. Biz, sadece bir teknoloji şirketi değil, aynı zamanda geleceğinizi inşa eden bir ekip olarak buradayız.</p>
+                <a href="@Url.Action("Apply", "Form")" class="btn btn-primary btn-lg">Hemen Başvur</a>
+            </div>
+            <div class="hero-image">
+                <img src="~/images/onlaptop.jpg" alt="Teknoloji" class="img-fluid">
+            </div>
+        </div>
     </div>
+</section>
+
+
+
+<section class="hero-about">
+    <div class="container hero-about-content">
+       
+        <div class="text-section">
+            <h2 class="display-4">Hakkımızda</h2>
+            <p class="lead">Ba-Tech Teknoloji A.Ş., sanal POS sistemleri alanında öncü ve yenilikçi bir firma olarak faaliyet göstermektedir. Sunduğumuz güvenli ve hızlı ödeme çözümleri ile işletmelerin dijital dünyada başarılı olmalarına yardımcı oluyoruz.</p>
+        </div>
+        
+    </div>
+</section>
+
+<section class="png-about">
+    <div class="img">
+        <img src="~/images/pos2.png" alt="Ba-Tech" class="img-fluid">
+        <div class="text-section">
+            <h2 class="display-4">150 Milyar</h2>
+           <p class="lead">İşlem Hacmi</p>
+        </div>
+    </div>
+    <div class="img">
+        <img src="~/images/icon2.png" alt="Ba-Tech" class="img-fluid">
+        <div class="text-section">
+            <h2 class="display-4">200 Milyon</h2>
+            <p class="lead">Toplam İşlem Sayısı</p>
+        </div>
+    </div>
+    <div class="img">
+        <img src="~/images/icons2.png" alt="Ba-Tech" class="img-fluid">
+        <div class="text-section">
+            <h2 class="display-4">80 Bin </h2>
+            <p class="lead">Müşteri Sayısı</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="what-we-do">
+    <div class="container">
+        <h2 class="display-4">Neler Yapıyoruz?</h2>
+        <p>Ba-Tech olarak, işletmelerin ödeme süreçlerini kolaylaştırmak ve hızlandırmak amacıyla sanal POS çözümleri sunuyoruz. İşte başlıca hizmetlerimiz:</p>
+
+        <h3>Sanal POS Çözümleri</h3>
+        <ul>
+            <li><strong>Kolay Entegrasyon:</strong> Sanal POS sistemlerimiz, e-ticaret sitenize kolayca entegre edilebilir, böylece müşterilerinizin ödemelerini sorunsuz bir şekilde alabilirsiniz.</li>
+            <li><strong>Güvenli Ödeme Altyapısı:</strong> En son güvenlik standartlarına uygun ödeme altyapımız ile hem işletmenizin hem de müşterilerinizin bilgilerini koruyoruz.</li>
+            <li><strong>Çoklu Para Birimi Desteği:</strong> Farklı para birimlerinde ödeme kabul ederek uluslararası satışlarınızı artırabilirsiniz.</li>
+            <li><strong>Hızlı ve Sorunsuz İşlem:</strong> Hızlı işlem onayları ve sorunsuz ödeme süreçleri ile müşteri memnuniyetini en üst düzeye çıkarıyoruz.</li>
+            <li><strong>Esnek Çözümler:</strong> İşletmenizin ihtiyaçlarına uygun esnek sanal POS çözümleri sunuyoruz.</li>
+        </ul>
+
+        <h3>Teknik Destek ve Danışmanlık</h3>
+        <ul>
+            <li><strong>24/7 Destek:</strong> Her zaman yanınızdayız. 7 gün 24 saat teknik destek hizmetimizle olası sorunlara anında müdahale ediyoruz.</li>
+            <li><strong>Kapsamlı Eğitim:</strong> Sanal POS sistemlerimizin kullanımı konusunda kapsamlı eğitimler veriyoruz, böylece sistemimizi en verimli şekilde kullanabilirsiniz.</li>
+            <li><strong>Danışmanlık Hizmetleri:</strong> İş süreçlerinizi optimize etmek için size özel danışmanlık hizmetleri sunuyoruz.</li>
+        </ul>
+    </div>
+</section>
 </div>
 
 <script>
     // Yükleme ekranı sonrası ana içeriği göster
-    window.addEventListener('load', function() {
-        setTimeout(function() {
+    window.addEventListener('load', function () {
+        setTimeout(function () {
             document.getElementById('loading-screen').style.opacity = 0.8;
-            setTimeout(function() {
+            setTimeout(function () {
                 document.getElementById('loading-screen').style.display = 'none';
                 document.getElementById('main-content').style.display = 'block';
                 document.getElementById('main-content').style.opacity = 1;
@@ -42,24 +134,3 @@
         }, 2000); // 2 saniye sonra ana içeriği göster
     });
 </script>
-
-
-@* <div class="text-center">
-    <h1 class="display-4">Ba-Tech'e Hoşgeldiniz!</h1>
-    <p>Finansal teknolojinin lideri.</p>
-</div>
-
-<div class="photo-section">
-    <h2>Fotoğraf Galerisi</h2>
-    <div class="photo-gallery">
-        <img src="~/images/site1.png" alt="Photo 1">
-        <img src="~/images/site2.png" alt="Photo 2">
-        <img src="~/images/Biz Kimiz (4).png" alt="Photo 3">
-    </div>
-</div>
-
-<div class="text-center">
-    <h1 class="display-4">Hoşgeldiniz</h1>
-    <p>Ba-Tech Teknoloji A.Ş. olarak, sanal pos sistemleri konusunda uzmanız. Güvenli ve hızlı ödeme çözümlerimizle hizmetinizdeyiz.</a>.</p>
-</div>
- *@
