@@ -52,12 +52,13 @@
                 <p class="lead">Finansal teknolojinin öncüsü olan Ba-Tech'e hoş geldiniz. Biz, sadece bir teknoloji şirketi değil, aynı zamanda geleceğinizi inşa eden bir ekip olarak buradayız.</p>
                 <a href="@Url.Action("Apply", "Form")" class="btn btn-primary btn-lg">Hemen Başvur</a>
             </div>
-            <div class="hero-image">
+            <div class="hero-image" id="hero-image">
                 <img src="~/images/onlaptop.jpg" alt="Teknoloji" class="img-fluid">
             </div>
         </div>
     </div>
 </section>
+
 
 
 
@@ -102,7 +103,7 @@
         <h2 class="display-4">Neler Yapıyoruz?</h2>
         <p>Ba-Tech olarak, işletmelerin ödeme süreçlerini kolaylaştırmak ve hızlandırmak amacıyla sanal POS çözümleri sunuyoruz. İşte başlıca hizmetlerimiz:</p>
 
-        <h3>Sanal POS Çözümleri</h3>
+        <h3 class="display-4">Sanal POS Çözümleri</h3>
         <ul>
             <li><strong>Kolay Entegrasyon:</strong> Sanal POS sistemlerimiz, e-ticaret sitenize kolayca entegre edilebilir, böylece müşterilerinizin ödemelerini sorunsuz bir şekilde alabilirsiniz.</li>
             <li><strong>Güvenli Ödeme Altyapısı:</strong> En son güvenlik standartlarına uygun ödeme altyapımız ile hem işletmenizin hem de müşterilerinizin bilgilerini koruyoruz.</li>
@@ -121,6 +122,134 @@
 </section>
 </div>
 
+<section id="faq" class="faq-section mt-5">
+    <div class="container">
+        <h2 class="text-center faq-header" style="cursor: pointer;">Sıkça Sorulan Sorular</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Sanal POS sistemi nedir?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Sanal POS sistemi, internet üzerinden ödeme almanızı sağlayan bir ödeme çözümüdür. Online satış yapan işletmeler için güvenli ve hızlı bir ödeme yöntemi sunar.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Sanal POS başvurusu nasıl yapılır?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Sanal POS başvurusu yapmak için ana sayfadaki başvuru formunu doldurabilir veya bizimle iletişime geçerek detaylı bilgi alabilirsiniz.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Başvurum ne kadar sürede sonuçlanır?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Başvurular genellikle 3 iş günü içinde değerlendirilir ve sonuçlandırılır. Başvurunuzun durumu hakkında bilgilendirilirsiniz.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Ba-Tech'in sunduğu ödeme çözümleri nelerdir?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Ba-Tech olarak sanal POS, mobil ödeme çözümleri, online ödeme geçitleri ve e-ticaret entegrasyonları gibi çeşitli ödeme çözümleri sunuyoruz.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Ba-Tech Sanal POS sisteminin avantajları nelerdir?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Ba-Tech Sanal POS sistemi, hızlı kurulum, güvenli ödeme, düşük komisyon oranları ve 7/24 teknik destek gibi birçok avantaj sunar.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Hangi sektörlerde sanal POS kullanılabilir?
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Sanal POS sistemi, e-ticaret, hizmet sektörü, perakende ve daha birçok sektörde kullanılabilir. İşletmenizin ihtiyaçlarına uygun çözümler sunuyoruz.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSeven">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        Ödeme güvenliği nasıl sağlanır?
+                    </button>
+                </h2>
+                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Ödeme güvenliği, PCI DSS sertifikasyonuna sahip sistemler ve 3D Secure gibi ek güvenlik önlemleri ile sağlanır. Müşterilerinizin bilgilerinin güvende olduğundan emin olabilirsiniz.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEight">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        Teknik destek nasıl sağlanır?
+                    </button>
+                </h2>
+                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Teknik destek ekibimiz, 7/24 hizmetinizdedir. Sorunlarınızı çözmek ve size yardımcı olmak için telefon veya e-posta yoluyla bize ulaşabilirsiniz.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingNine">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                        Sanal POS komisyon oranları nedir?
+                    </button>
+                </h2>
+                <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Sanal POS komisyon oranlarımız, iş hacminize ve sektörünüze göre değişiklik gösterebilir. Detaylı bilgi almak için bizimle iletişime geçebilirsiniz.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTen">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                        Ba-Tech'e nasıl ulaşabilirim?
+                    </button>
+                </h2>
+                <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Bize ulaşmak için sitemizdeki iletişim formunu kullanabilir veya telefon ve e-posta yoluyla bizimle iletişime geçebilirsiniz.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <script>
     // Yükleme ekranı sonrası ana içeriği göster
     window.addEventListener('load', function () {
@@ -133,4 +262,23 @@
             }, 1000); // Opacity değişimi için bekleme süresi
         }, 2000); // 2 saniye sonra ana içeriği göster
     });
+    // Sıkça sorulan sorular
+    document.addEventListener("DOMContentLoaded", function () {
+        const faqHeader = document.querySelector(".faq-header");
+        const faqItems = document.querySelectorAll(".accordion-collapse");
+
+        faqHeader.addEventListener("click", function () {
+            faqItems.forEach(item => {
+                if (!item.classList.contains("show")) {
+                    item.classList.add("show");
+                } else {
+                    item.classList.remove("show");
+                }
+            });
+        });
+    });
 </script>
+
+
+
+

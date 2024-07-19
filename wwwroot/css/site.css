@@ -212,6 +212,7 @@ nav {
 
     .what-we-do h2, .what-we-do h3 {
         color: #00838F;
+        padding: 25px 0;
     }
 
     .what-we-do p, .what-we-do ul {
@@ -382,12 +383,36 @@ nav {
     position: relative; /* Ýçeriði konumlandýrmak için */
 }
 
+/*Sýkça sorulan sorular*/
+.faq-section {
+    padding: 50px 0;
+}
+
+.accordion-button::after {
+    margin-left: auto;
+}
+
+.accordion-item {
+    border: none;
+}
+
+
 .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+@media (max-width: 767.98px) {
+    .hero-section .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .hero-image {
+        margin-top: 50px; /* Buton ile fotoðraf arasýna boþluk koymak için */
+    }
+}
 @media (min-width: 768px) {
     .hero-image {
         border-radius: 50%; /* Yuvarlak resim */
@@ -401,6 +426,7 @@ nav {
         flex: 1 0 100%; /* Her bir hero-image'ýn geniþliðini %100 yap */
         max-width: 300px; /* Maksimum geniþlik belirle */
         align-items: center;
+
     }
 }
 @media (min-width: 768px) {
