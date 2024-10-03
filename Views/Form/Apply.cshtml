@@ -1,12 +1,7 @@
-﻿
-
-
-@{
+﻿@* @{
     var form = ViewData["Forms"] as List<Form>;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-   
-
 
 <h2>Başvuru Ekranı</h2>
 @if (ViewBag.Message != null)
@@ -14,7 +9,7 @@
     <p>@ViewBag.Message</p>
 }
 <div class="form-container">
-    <form  method="post" asp-action="Apply">
+    <form id="applyForm" method="post" asp-action="Apply">
         <label for="firstName">Ad:</label><br>
         <input type="text" id="firstName" name="firstName" required /><br><br>
 
@@ -36,6 +31,7 @@
         <label for="mesaj">Mesajınız:</label><br>
         <textarea id="message" name="mesaj" rows="4" cols="50" required></textarea><br><br>
 
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
         <input type="submit" value="Gönder" />
     </form>
 </div>
@@ -75,4 +71,4 @@
             background-color: #008080;
         }
 </style>
-
+ *@

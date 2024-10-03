@@ -7,34 +7,28 @@ namespace Batech.Controllers
     public class FormController : Controller
     {
         private readonly FormContext _context;
+
         public FormController(FormContext context)
         {
             _context = context;
-        }
-        public IActionResult Index()
-        {
-            return View();
         }
 
         [HttpGet]
         public IActionResult Apply()
         {
-            return View();
+            return NotFound();
         }
 
         [HttpPost]
-        public IActionResult Apply(Form form)
+        public async Task<IActionResult> Apply(Form form)
         {
-
-            // Form verilerini işleyin
-            ViewBag.Message = "Başvurunuz alındı. Teşekkür ederiz!";
-            var forms = _context.Forms.ToList();
-            ViewData["Forms"] = forms;
+            return NotFound();
 
             _context.Forms.Add(form);
-            _context.SaveChanges();
-            return RedirectToAction("Apply");
+            await _context.SaveChangesAsync();
 
+            ViewBag.Message = "Başvurunuz alındı. Teşekkür ederiz!";
+            return View();
         }
     }
 }

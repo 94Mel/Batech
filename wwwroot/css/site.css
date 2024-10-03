@@ -415,10 +415,10 @@ nav {
 }
 @media (min-width: 768px) {
     .hero-image {
-        border-radius: 50%; /* Yuvarlak resim */
+        /*border-radius: 50%;*/ /* Yuvarlak resim */
         overflow: hidden;
         width: 200px;
-        height: 200px;
+        height: 400px;
         margin-bottom: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
         transition: transform 0.3s ease-in-out; /* Geçiþ efekti */
